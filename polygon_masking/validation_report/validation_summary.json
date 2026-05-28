@@ -1,0 +1,10 @@
+{
+  "total_labels": 107493,
+  "ok": 106522,
+  "no_polygon": 967,
+  "missing_masks": 8,
+  "json_error": 0,
+  "expected_masks": 156718,
+  "missing_mask_files": 5,
+  "local_orphan_files": 0
+}

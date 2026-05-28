@@ -6,3 +6,5 @@
 .venv/
 venv/
 VLM_captioning/output/*.jsonl
+polygon_masking/masking_data/
+polygon_masking/upload_manifest.txt

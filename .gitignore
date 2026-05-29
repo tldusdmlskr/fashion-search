@@ -1,0 +1,7 @@
+﻿venv/
+images/
+*.pt
+inference_all.csv
+__pycache__/
+*.pyc
+.env

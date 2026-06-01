@@ -1,4 +1,4 @@
-# 마스크 데이터를 R2에서 다운로드하여 폴리곤 마스크 생성하는 스크립트
+# 마스크 데이터를 R2에서 다운로드하여 폴리곤 마스크 jpg 생성하는 스크립트. 생성 결과는 로컬 폴더에 저장한다.
 from __future__ import annotations
 
 import argparse

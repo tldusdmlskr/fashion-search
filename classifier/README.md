@@ -52,8 +52,7 @@ results = clf.predict_batch(["url1", "url2", ...])
 
 ## 학습 데이터
 
-- 총 3,941장 (project-19: 1,485장 / project-21: 1,276장 / project-24: 1,180장)
-- project-24는 기존 어노테이터(ID 1,4,5,6)만 사용
+- 총 4760장
 - 마스킹 이미지(배경 제거) 활용
 
 ## 환경

@@ -5,3 +5,7 @@ inference_all.csv
 __pycache__/
 *.pyc
 .env
+_de_project2_tmp/
+data/labels/
+output/
+annotation_setting/r2_credentials.py

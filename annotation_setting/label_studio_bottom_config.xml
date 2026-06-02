@@ -1,0 +1,47 @@
+<!--
+  Label Studio → Settings → Labeling Interface → Code 에 붙여넣기
+
+  Task data: image, item_info, file_id
+  Predictions: bbox_display (rectanglelabels, read-only 참고용)
+
+  Export 필드명:
+    - bottom_waist_rise: high_rise | mid_rise | low_rise | unknown
+    - bottom_length: micro_short | short | bermuda | capri | midi | ankle | floor_maxi | unknown
+-->
+<View style="display: flex; flex-direction: row; gap: 24px; font-family: sans-serif;">
+  <View style="flex: 1; min-width: 0;">
+    <Image name="image" value="$image" zoom="true" zoomControl="true" rotateControl="false"/>
+    <RectangleLabels name="bbox_display" toName="image" opacity="0.35" strokeWidth="2">
+      <Label value="현재 라벨링 대상" background="#FF6B6B"/>
+    </RectangleLabels>
+  </View>
+
+  <View style="width: 380px; flex-shrink: 0; overflow-y: auto; max-height: 90vh;">
+    <Header value="이미지 정보"/>
+    <Text name="meta_file_id" value="file_id: $file_id" granularity="sentence"/>
+    <Text name="meta_item_info" value="$item_info" granularity="sentence"/>
+
+    <Header value="하의 허리선 위치 (bottom_waist_rise)"/>
+    <Choices name="bottom_waist_rise" toName="image" choice="single" showInline="false" required="true">
+      <Choice value="high_rise" alias="하이웨이스트 — 배꼽 위·자연 허리"/>
+      <Choice value="mid_rise" alias="미드웨이스트 — 자연 허리~골반"/>
+      <Choice value="low_rise" alias="로우라이즈 — 자연 허리보다 아래"/>
+      <Choice value="unknown" alias="판별불가 — 허리 가림·판단 불가"/>
+    </Choices>
+
+    <Header value="하의 기장 (bottom_length)"/>
+    <Choices name="bottom_length" toName="image" choice="single" showInline="false" required="true">
+      <Choice value="micro_short" alias="초숏 — 허벅지 상단"/>
+      <Choice value="short" alias="숏 — 허벅지 중간"/>
+      <Choice value="bermuda" alias="버뮤다 — 무릎·무릎 바로 위"/>
+      <Choice value="capri" alias="카프리 — 종아리 중간"/>
+      <Choice value="midi" alias="미디 — 정강이 중간"/>
+      <Choice value="ankle" alias="발목 — 발목뼈 근처"/>
+      <Choice value="floor_maxi" alias="맥시 — 바닥·신발 덮는 길이"/>
+      <Choice value="unknown" alias="판별불가 — 기장 판단 불가"/>
+    </Choices>
+
+    <Header value="판단 기준"/>
+    <Text name="guide" value="허리선: 옷의 밴드/허리선 기준 (모델이 어떻게 입었는지 X).&#10;기장: 헴이 비대칭이면 가장 긴 지점. 와이드핏은 기장과 무관." granularity="sentence"/>
+  </View>
+</View>

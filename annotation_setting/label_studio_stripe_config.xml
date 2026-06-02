@@ -1,0 +1,33 @@
+<!--
+  스트라이프 방향 라벨링 — Label Studio → Settings → Labeling Interface
+
+  Import: output/tasks_stripe.json
+  Export: stripe_direction = vertical | horizontal | diagonal | mixed | none | unknown
+-->
+<View style="display: flex; flex-direction: row; gap: 24px; font-family: sans-serif;">
+  <View style="flex: 1; min-width: 0;">
+    <Image name="image" value="$image" zoom="true" zoomControl="true" rotateControl="false"/>
+    <RectangleLabels name="bbox_display" toName="image" opacity="0.35" strokeWidth="2">
+      <Label value="현재 라벨링 대상" background="#4C6EF5"/>
+    </RectangleLabels>
+  </View>
+
+  <View style="width: 400px; flex-shrink: 0; overflow-y: auto; max-height: 90vh;">
+    <Header value="이미지 정보"/>
+    <Text name="meta_file_id" value="file_id: $file_id" granularity="sentence"/>
+    <Text name="meta_item_info" value="$item_info" granularity="sentence"/>
+
+    <Header value="스트라이프 방향 (stripe_direction)"/>
+    <Choices name="stripe_direction" toName="image" choice="single" showInline="false" required="true">
+      <Choice value="vertical" alias="세로 (vertical) — 위·아래 방향 줄무늬"/>
+      <Choice value="horizontal" alias="가로 (horizontal) — 좌·우 방향 줄무늬"/>
+      <Choice value="diagonal" alias="대각 (diagonal) — 사선 줄무늬"/>
+      <Choice value="mixed" alias="혼합 (mixed) — 세로·가로·대각이 함께 보임"/>
+      <Choice value="none" alias="없음 (none) — 스트라이프 없음 / 무지"/>
+      <Choice value="unknown" alias="판별불가 — 가림·해상도·각도로 판단 불가"/>
+    </Choices>
+
+    <Header value="판단 기준"/>
+    <Text name="guide" value="스트라이프가 있는 영역(빨간 박스·해당 의류) 기준으로 판단.&#10;• vertical: 줄무늬가 대체로 수직&#10;• horizontal: 줄무늬가 대체로 수평&#10;• diagonal: 줄무늬가 대체로 사선&#10;• mixed: 두 방향 이상이 뚜렷함&#10;• none: 스트라이프 패턴이 보이지 않음 (지그재그·체크 등은 none)&#10;• unknown: 패턴·방향을 확신할 수 없을 때만" granularity="sentence"/>
+  </View>
+</View>

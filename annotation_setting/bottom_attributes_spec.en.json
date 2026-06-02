@@ -1,0 +1,106 @@
+{
+  "scope": "Lower-body garments only (pants, shorts, skirts, skorts). Apply per labeled item when the garment type is a bottom.",
+  "attributes": [
+    {
+      "attribute_en": "bottom_waist_rise",
+      "attribute_ko": "하의 허리선 위치",
+      "description_en": "Vertical position of the waistband or natural waist seam relative to the torso, judged on the garment itself (not the model's styling).",
+      "applies_to": ["하의", "bottom", "pants", "shorts", "skirt", "skort"],
+      "values": [
+        {
+          "value_en": "high_rise",
+          "value_ko": "하이웨이스트",
+          "definition_en": "Waistband sits at or above the natural waist (near the narrowest torso point, typically at or above the navel). Visually short rise length from crotch to waistband."
+        },
+        {
+          "value_en": "mid_rise",
+          "value_ko": "미드웨이스트",
+          "definition_en": "Waistband sits between the natural waist and the hips (around the hip bone). Default regular rise for most trousers and skirts."
+        },
+        {
+          "value_en": "low_rise",
+          "value_ko": "로우라이즈",
+          "definition_en": "Waistband sits clearly below the natural waist, on or near the upper hip. More hip bone exposure than mid rise; longer front fly/rise area."
+        },
+        {
+          "value_en": "drop_waist",
+          "value_ko": "드롭웨이스트",
+          "definition_en": "Waist seam or waist detail sits at the upper hip or below the hip, with the main waistline intentionally lowered (not merely low rise denim). Often seen on dresses/skirts with a seam below the natural waist."
+        },
+        {
+          "value_en": "elastic_full_waist",
+          "value_ko": "밴딩허리",
+          "definition_en": "No fixed waistband position; entire waist opening is elasticized (sweatpants, lounge pants, some paperbag waists). Do not use for only partial elastic back panels."
+        },
+        {
+          "value_en": "unknown",
+          "value_ko": "판별불가",
+          "definition_en": "Waist not visible (cropped top covering waist, occluded pose, or image quality). Use only when rise cannot be judged with reasonable confidence."
+        }
+      ],
+      "labeling_rules_en": [
+        "Judge the garment's waistband or waist seam, not how low the model pulls the item on the body.",
+        "For skirts without a waistband, use the waist seam where the skirt attaches to the bodice or the visible waist gathering line.",
+        "If both low_rise and drop_waist could apply, prefer drop_waist only when a deliberate lowered waist seam is a design feature; otherwise use low_rise."
+      ]
+    },
+    {
+      "attribute_en": "bottom_length",
+      "attribute_ko": "하의 기장",
+      "description_en": "Hem position along the leg (or standing length for skirts), using the longest point of the hem. Seven mutually exclusive categories.",
+      "applies_to": ["하의", "bottom", "pants", "shorts", "skirt", "skort"],
+      "values": [
+        {
+          "value_en": "micro_short",
+          "value_ko": "초숏",
+          "definition_en": "Hem at upper thigh, well above mid-thigh. Hot pants, very short shorts, micro mini skirts."
+        },
+        {
+          "value_en": "short",
+          "value_ko": "숏",
+          "definition_en": "Hem around mid-thigh (between upper thigh and knee). Standard short shorts and short skirts."
+        },
+        {
+          "value_en": "bermuda",
+          "value_ko": "버뮤다",
+          "definition_en": "Hem at or just above the knee (knee cap area). Bermuda shorts, knee-length skirts."
+        },
+        {
+          "value_en": "capri",
+          "value_ko": "카프리",
+          "definition_en": "Hem between knee and ankle, typically mid-calf. Capri pants, cropped trousers, calf-length skirts."
+        },
+        {
+          "value_en": "midi",
+          "value_ko": "미디",
+          "definition_en": "Hem below the knee and above the ankle, often mid-shin. Midi skirts and long culottes that end below the knee."
+        },
+        {
+          "value_en": "ankle",
+          "value_ko": "발목",
+          "definition_en": "Hem at or just above the ankle bone. Full-length trousers, ankle-grazing skirts."
+        },
+        {
+          "value_en": "floor_maxi",
+          "value_ko": "맥시",
+          "definition_en": "Hem at or near the floor, covering most of the foot or shoe. Maxi skirts and extra-long trousers."
+        }
+      ],
+      "labeling_rules_en": [
+        "Use the lowest hem point when the hem is asymmetric (high-low, handkerchief hem).",
+        "For skorts, judge by the longest visible hem (skirt panel) unless the product is clearly shorts-length with only a decorative overlay.",
+        "Do not confuse leg opening width (wide-leg) with length; classify by where the hem meets the leg.",
+        "When in doubt between adjacent categories, choose the category where the majority of the hem circumference falls."
+      ],
+      "hem_reference_en": {
+        "micro_short": "upper thigh",
+        "short": "mid-thigh",
+        "bermuda": "knee / above knee",
+        "capri": "mid-calf",
+        "midi": "mid-shin (below knee, above ankle)",
+        "ankle": "ankle bone",
+        "floor_maxi": "floor / over shoe"
+      }
+    }
+  ]
+}

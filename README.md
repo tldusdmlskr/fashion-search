@@ -20,4 +20,5 @@ ko-sroberta 의미적 리랭킹
 ↓
 Top-10 반환
 
-###구글드라이브에서 qdrant_storage 폴더와 captions_full_lite.jsonl를 다운로드 받은 후 코드 경로를 고쳐서 실행
+## Path 설정
+구글드라이브에서 qdrant_storage 폴더와 captions_full_lite.jsonl를 다운로드 받은 후 코드 경로를 고쳐서 실행

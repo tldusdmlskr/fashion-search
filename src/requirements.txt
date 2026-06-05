@@ -1,0 +1,6 @@
+open-clip-torch
+qdrant-client
+deep-translator
+sentence-transformers
+torch
+numpy

@@ -5,31 +5,19 @@
 
 ## 파이프라인 구조
 자연어 쿼리
-
 ↓
-
 fashion_dict 치환 → Google 번역
-
 ↓
-
 marqo-fashionSigLIP으로 쿼리 임베딩
-
 ↓
-
 Qdrant Visual Index Top-100 검색
-
 ↓
-
 카테고리 사전 필터링
-
 ↓
-
 캡션 키워드 부스트/페널티 재정렬
-
 ↓
-
 ko-sroberta 의미적 리랭킹
-
 ↓
-
 Top-10 반환
+
+###구글드라이브에서 qdrant_storage 폴더와 captions_full_lite.jsonl를 다운로드 받은 후 코드 경로를 고쳐서 실행
